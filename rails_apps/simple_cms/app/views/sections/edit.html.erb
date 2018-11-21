@@ -1,0 +1,10 @@
+<div class="sections edit">
+	<%= link_to("<<Back", {:controller => 'sections', :action => 'index'}) %>
+
+	<%= form_for(:section, :url => {:controller => 'sections', :action => 'update', :id => @section.id}) do |f|%>
+	
+	<%= render(:partial => 'form', :locals => {:f => f}) %>
+	<%= submit_tag("Done") %>
+	<% end %>
+</div>
+

@@ -1,0 +1,25 @@
+<html>
+	<head>
+	<title>Simple Cms | <%= @subject_title || @page_title || @section_title || "Admin Page" %></title>
+	<%= stylesheet_link_tag('application', :media => 'all') %>
+	</head>
+	<body>
+
+	<div id="header">
+	<h1>Simple CMS Admin </h1>
+	</div>  
+
+	<div id="main">
+		<% if !flash[:notice].blank? %>
+			<%= flash[:notice] %>
+		<% end %>
+		<div id="content">
+			<%= yield %>
+		</div>
+	</div>
+	<div id="footer">
+		<p id="copyright">&copy; lynda.com /Kevin skoglund </p>
+	</div>
+</body>
+</html>     
+

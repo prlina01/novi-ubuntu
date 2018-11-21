@@ -1,0 +1,16 @@
+<% !if flash[:notice].blank? %>
+<div class="notice" >
+<%= flash[:notice] %>
+<% end %>
+</div>
+
+
+
+<div class = "sections delete">
+	<%= link_to("<<Back", {:controller => 'sections', :action => 'index'}) %>
+	<%= form_for(:section, :url => {:controller => 'sections', :action => 'destroy', :id => @section.id}) do |f| %>
+		<p>Da li ste sigurni da zelite da obrisete:</p>
+		<p><%= @section.name  %></p>
+		<%= submit_tag("Yes") %>
+	<% end %>
+</div>

@@ -1,0 +1,30 @@
+<% @page_title = 'Users' %>
+<div class = "adminusers index">
+	<%= link_to("New user:", {:action => 'new'}) %>
+	<% @admin_users.each do |admin_user| %>
+	 <table style="">
+	 	<tr>
+	 		<th>First name</th>
+	 		<th>Last Name</th>
+	 		<th>User Name </th>
+	 		<th>Email</th>
+	 		<th>Password</th>
+	 		<th>Actions</th>
+	 	</tr>
+	 	<tr>
+	 		<td> <%= admin_user.first_name %></td>
+	 		<td> <%= admin_user.last_name %></td>
+	 		<td> <%= admin_user.username %></td>
+	 		<td> <%= admin_user.email %></td>
+	 		<td> <%= admin_user.password_digest %></td>
+	 		<td>
+	 			<%= link_to("Edit", {:action => 'edit', :id => admin_user.id}) %>
+	 			<%= link_to("Delete", {:action => 'delete', :id => admin_user.id}) %>
+	 		</td>
+	 	</tr>
+
+
+	 </table><br><br><br><br><br><br><br><br><br>
+	 <%= link_to("<<Main Menu",{:controller => 'access'}) %>
+	 <% end %>
+</div>

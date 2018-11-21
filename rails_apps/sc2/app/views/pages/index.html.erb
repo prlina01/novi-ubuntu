@@ -1,0 +1,33 @@
+<% @page_title = "Pages" %>
+<div class="pages index"><center><br>
+	<%= link_to("<<Subjects", {:action => 'index', :controller => 'subjects'}) %><br><br>
+	 <%= link_to("Napravi novu stranu",{:controller => 'pages', :action => 'new', :subject_id => @subject.id}) %>
+	 <br><br>
+	 	<table>
+	 		<tr>
+	 			<th>&nbsp;</th>
+	 			<th>Name</th>
+	 			<th>Subject</th>
+	 			<th>Visible</th>
+	 			<th>PermaLink</th>
+	 			<th>Actions</th>
+	 		</tr>	
+	 		<% @pages.each do |p| %>
+	 		<tr>
+	 			<td><%= p.position %></td>
+	 			<td><%= p.subject.name if p.subject %></td>
+	 			<td><%= p.name %></td>
+	 			<td><%= status_tag(p.visible) %></td>
+	 			<td><%= p.permalink %></td>
+	 			<td>
+	 				<%= link_to("Show Sections", {:controller => 'sections', :page_id => p.id}) %>
+	 				<%= link_to("Show",{:controller => 'pages', :action => 'show', :id => p.id,:subject_id => @subject.id}) %>
+	 				<%= link_to("edit", {:controller => 'pages', :action => 'edit', :id => p.id,:subject_id => @subject.id}) %>
+	 				<%= link_to("delete", {:controller => 'pages', :action => 'delete', :id => p.id,:subject_id => @subject.id}) %>
+	 			</td>
+	 		</tr>
+	 		<% end %>
+	 	</table>
+	 	</center>
+	 	
+</div>

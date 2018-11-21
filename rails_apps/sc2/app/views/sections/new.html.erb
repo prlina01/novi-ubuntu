@@ -1,0 +1,9 @@
+<div class="sections new">
+	<%= link_to("<<Back", {:controller => 'sections', :action => 'index', :page_id => @page.id}) %>
+
+	<%= form_for(:section, :url => {:controller => 'sections', :action => 'create', :page_id => @page.id}) do |f| %>
+	
+	<%= render(:partial => "form", :locals => {:f => f}) %>
+	<%= submit_tag("Done") %>
+	<% end %>
+</div>

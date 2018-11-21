@@ -1,0 +1,30 @@
+<% @section_title = "Sections" %>
+<div class="sections index"><center>
+	<%= link_to("Back to Pages", {:controller => 'pages', :subject_id => @page.subject_id}) %>
+	<%= link_to("Make new section", {:controller => 'sections', :action => 'new', :page_id => @page.id}) %>
+
+	<table style="border: 1px black solid; text-align:center;">
+		<tr>
+			<th></th>
+			<th>Name</th>
+			<th>Visible</th>
+			<th>Content Type </th>
+			<th>Actions </th>
+		</tr>
+		<% @sections.each do |s| %>
+		<tr>
+			<td><%= s.position %></td>
+			<td><%= s.name %></td>
+			<td><%= status_tag(s.visible) %></td>
+			<td><%= s.content_type %></td>
+			<td>
+				<%= link_to("Show",{:controller => 'sections', :action => 'show', :id => s.id, :page_id => @page.id}) %>
+				<%= link_to("Edit", {:controller => 'sections', :action => 'edit', :id => s.id, :page_id => @page.id}) %>
+				<%= link_to("Delete", {:controller => 'sections', :action => 'delete' ,:id => s.id, :page_id => @page.id}) %>
+			</td>
+		</tr>
+		<% end %>
+	</table>
+</div>
+			
+</center>

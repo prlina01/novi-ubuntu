@@ -1,0 +1,8 @@
+<div class ="pages new">
+	<%= link_to("<<Vrati se",{:action => 'index',:subject_id => @subject.id}) %>
+		<%= form_for(:page, :url => {:action => 'create',:subject_id => @subject.id}) do |f| %>
+		
+		<%= render(:partial => "form", :locals => {:f => f}) %>
+		<%= submit_tag("Napravi") %>
+	<% end %>
+</div>

@@ -1,0 +1,35 @@
+<% @page_title = 'New User' %>
+<div class = "adminusers new">
+	<%= link_to("<<Back to the list",{:action => 'index'}) %>
+	<%= form_for(:admin_user, :url => {:action => 'create'}) do |f| %>
+		<table class="<%= cycle('odd', 'even') %>">
+			<tr>
+				<th> <%= f.label(:first_name) %></th>
+				<td> <%= f.text_field(:first_name) %></td>
+			</tr>
+			<tr>
+				<th> <%= f.label(:last_name) %></th>
+				<td> <%= f.text_field(:last_name) %></td>
+			</tr>
+			<tr>
+				<th> <%= f.label(:username) %></th>
+				<td> <%= f.text_field(:username) %></td>
+			</tr>
+			<tr>
+				<th> <%= f.label(:email) %></th>
+				<td> <%= f.text_field(:email) %></td>
+			</tr>
+			<tr>
+				<th> <%= f.label(:email_confirmation) %></th>
+				<th> <%= f.text_field(:email_confirmation) %></th>
+			</tr>
+			<tr>
+				<th> <%= f.label(:password) %> </th>
+				<td> <%= f.password_field(:password) %></td>
+			</tr>
+	</table>
+	<br>
+	<center><%= submit_tag('Submit') %></center>
+
+	<% end %>
+</div>

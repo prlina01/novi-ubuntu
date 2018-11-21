@@ -1,0 +1,8 @@
+<% @page_title = 'Edit Users' %>
+<div class = "adminusers edit" >
+<%= link_to("<<Go back", {:action => 'index'}) %>
+	<%= form_for(:admin_user, :url => {:controller => 'admin_users',:action => 'update', :id => @admin_user.id}) do |f| %>
+	<%= render(:partial => 'admin_users_form', :locals => {:f => f}) %>
+	<center><%= submit_tag('Submit') %></center>
+	<% end %>
+

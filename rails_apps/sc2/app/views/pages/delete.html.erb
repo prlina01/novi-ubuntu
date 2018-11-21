@@ -1,0 +1,7 @@
+<div class="pages delete">
+<% link_to("Vrati se", {:action => 'index',:subject_id => @subject.id}) %>
+<%= form_for(:page, :url => {:action => 'destroy', :id => @page.id, :subject_id => @subject.id}) do |f| %>
+<%= @page.name %>
+<%= submit_tag("Brisi") %>
+<% end %>
+</div>

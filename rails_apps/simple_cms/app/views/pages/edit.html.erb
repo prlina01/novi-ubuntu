@@ -1,0 +1,9 @@
+<div class="pages edit">
+	<%= link_to("<<Vrati se", {:controller => 'pages', :action => 'index'}) %>
+	<%= form_for(:page, :url => {:action => 'update', :id => @page.id}) do |f| %>
+	
+	<%= render(:partial => "form", :locals => {:f => f})	%>
+	<%= submit_tag("Submit!") %>
+	<% end %>
+</div>
+

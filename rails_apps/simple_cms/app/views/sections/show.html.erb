@@ -1,0 +1,23 @@
+<div class="sections show">
+	<%= link_to("<< Back", {:controller => 'sections', :action => 'index'}) %>
+
+	<table style="border: 1px black solid">
+		<tr>
+			<th>Name</th>
+			<td><%= @section.name %></td>
+		</tr>
+		<tr>
+			<th>Position</th>
+			<td><%= @section.position %></td>
+		</tr>
+		<tr>
+			<th>Visible</th>
+			<td><%= @section.visible %></td>
+		</tr>
+		<tr>
+			<th>Content ID</th>
+			<td><%= @section.content_type %></td>
+		</tr>
+	</table>
+</div>
+

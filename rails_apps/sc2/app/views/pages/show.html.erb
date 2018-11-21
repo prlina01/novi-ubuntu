@@ -1,0 +1,23 @@
+<div class="pages show">
+	<%= link_to("<<Sve strane",{:controller => 'pages', :action => 'index',:subject_id => @subject.id}) %>
+<br><br>
+		<table>
+			<tr>
+				<th>Ime</th>
+				<td><%= @page.name %></td>
+			</tr>
+			<tr>
+				<th>Position </th>
+				<td><%= @page.position %></td>
+			</tr>
+			<tr>
+				<th>Visible</th>
+				<td><%= @page.visible %></td>
+			</tr>
+			<tr>
+				<th>PermaLink</th>
+				<td><%= @page.permalink %></td>
+			</tr>
+		</table>
+	</div>
+

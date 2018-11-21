@@ -1,0 +1,20 @@
+<h1>Svi igraci</h1>
+
+<style type="text/css">
+	table, th, td {
+	 	border: 1px solid black;
+	}
+</style>
+
+<table>
+	<tr>
+		<th>Ime i prezime</th>
+		<th>Goals</th>
+	</tr>
+	<% @players.each do |player| %>
+		<tr>
+			<td><%= "#{player.first_name} #{player.last_name}" %></td>
+			<td><%= player.score %></td>
+		</tr>
+	<% end %>
+</table>

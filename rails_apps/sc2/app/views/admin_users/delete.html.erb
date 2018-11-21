@@ -1,0 +1,9 @@
+<% @page_title = 'Delete User' %>
+<div class = "adminusers delete">
+	<%= link_to("<<Back", {:action => 'index'}) %>
+	<%= form_for(:admin_user, :url => {:action => 'destroy', :id => @admin_user.try(:id)}) do |f| %>
+	<h2>Are you sure you want to delete the following user:</h2> 
+	<h2><%= @admin_user.username %></h2>
+	<%= submit_tag('Submit') %>
+	<% end %>
+</div> 
